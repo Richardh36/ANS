@@ -38,3 +38,7 @@ class ContactPage(Page):
         panels.FieldPanel('phone_number'),
         panels.FieldPanel('email_address'),
     ]
+
+
+class StandardPage(Page):
+    pass

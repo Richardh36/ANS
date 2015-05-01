@@ -23,8 +23,7 @@ class HomePage(Page):
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('hero_image'),
-        panels.FieldPanel('hero_title'),
-        panels.FieldPanel('hero_text'),
+        panels.FieldPanel('intro'),
     ]
 
 

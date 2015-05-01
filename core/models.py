@@ -4,9 +4,15 @@ from django.db import models
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailadmin import edit_handlers as panels
+from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
 
 class HomePage(Page):
+    hero_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        on_delete=models.SET_NULL,
+    )
     hero_title = models.CharField(max_length=255)
     hero_text = models.TextField(max_length=255)
 
@@ -16,6 +22,7 @@ class HomePage(Page):
     parent_page_types = []
 
     content_panels = Page.content_panels + [
+        ImageChooserPanel('hero_image'),
         panels.FieldPanel('hero_title'),
         panels.FieldPanel('hero_text'),
     ]

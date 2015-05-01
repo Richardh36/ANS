@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
-{% load wagtailimages_tags %}
+{% load static wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block hero %}
-    {% image self.hero_image fill-1000x256 as hero_image %}
-    <img id="hero-image" src="{{ hero_image.url }}" alt="{{ hero_image.title }}">
+    {% if self.hero_image %}
+        {% image self.hero_image fill-1000x256 as hero_image %}
+        <img id="hero-image" src="{{ hero_image.url }}" alt="{{ hero_image.title }}">
+    {% else %}
+        <img id="hero-image" src="{% static 'img/default-hero.jpg' %}">
+    {% endif %}
 
     <div id="hero-content">
         <h1>{{ self.hero_title }}</h1>

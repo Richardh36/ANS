@@ -11,6 +11,7 @@ class HomePage(Page):
     hero_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
+        blank=True,
         on_delete=models.SET_NULL,
     )
     hero_title = models.CharField(max_length=255, blank=True)
@@ -32,6 +33,7 @@ class ContactPage(Page):
     hero_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
+        blank=True,
         on_delete=models.SET_NULL,
     )
     phone_number = models.CharField(max_length=20)
@@ -50,6 +52,7 @@ class StandardPage(Page):
     hero_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
+        blank=True,
         on_delete=models.SET_NULL,
     )
     intro = models.TextField(max_length=255, blank=True)

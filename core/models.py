@@ -35,6 +35,7 @@ class ContactPage(Page):
         blank=True,
         on_delete=models.SET_NULL,
     )
+    intro = models.TextField(max_length=255, blank=True)
     phone_number = models.CharField(max_length=20)
     email_address = models.EmailField(max_length=254)
 
@@ -42,6 +43,7 @@ class ContactPage(Page):
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('hero_image'),
+        panels.FieldPanel('intro'),
         panels.FieldPanel('phone_number'),
         panels.FieldPanel('email_address'),
     ]

@@ -1,4 +1,4 @@
-{% load compress static wagtailuserbar %}
+{% load compress static wagtailuserbar ans_tags %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -27,6 +27,8 @@
         {% wagtailuserbar %}
 
         <header>
+            {% get_homepage as home_page %}
+
             <img id="logo" src="{% static 'img/logo.png' %}" alt="Agile Networking Solutions Ltd">
 
             <nav role="navigation">
@@ -37,17 +39,20 @@
                 </ul>
             </nav>
 
-            <div id="header-contact">
-                <div class="telephone">
-                    <span class="glyphicon glyphicon-earphone"></span> 01865 881130
-                </div>
-                <div class="email">
-                    <a class="email" href="mailto:enquiries@agilenetworking.co.uk">
-                        <span class="glyphicon glyphicon-envelope"></span> enquiries@agilenetworking.co.uk
-                    </a>
-                </div>
-
-            </div>
+            {% with home_page.get_contact_page as contact_page %}
+                {% if contact_page %}
+                    <div id="header-contact">
+                        <div class="telephone">
+                            <span class="glyphicon glyphicon-earphone"></span> {{ contact_page.phone_number }}
+                        </div>
+                        <div class="email">
+                            <a class="email" href="mailto:enquiries@agilenetworking.co.uk">
+                                <span class="glyphicon glyphicon-envelope"></span> {{ contact_page.email_address }}
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endwith %}
         </header>
 
         <main>

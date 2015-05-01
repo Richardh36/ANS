@@ -123,3 +123,22 @@ footer {
     color: #FFF;
     padding: 20px;
 }
+
+
+
+// CONTACT PAGE
+
+body.template-contactpage {
+    div#contact-info {
+        div {
+            &.telephone {
+                line-height: 1.2em;
+                font-size: 2.5em;
+            }
+
+            span.glyphicon {
+                font-size: 0.7em;
+            }
+        }
+    }
+}

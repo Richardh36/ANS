@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body_class %}template-contactpage{% endblock %}
+
+{% block hero %}
+    <img id="hero-image" src="http://lorempixel.com/1024/256/technics/">
+{% endblock %}
+
+{% block content %}
+    <h2>{{ self.title }}</h2>
+
+    <div id="contact-info">
+        <div class="telephone">
+            <span class="glyphicon glyphicon-earphone"></span> {{ self.phone_number }}
+        </div>
+        <div class="email">
+            <a class="email" href="mailto:enquiries@agilenetworking.co.uk">
+                <span class="glyphicon glyphicon-envelope"></span> {{ self.email_address }}
+            </a>
+        </div>
+    </div>
+{% endblock %}

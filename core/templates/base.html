@@ -35,9 +35,11 @@
 
             <nav role="navigation">
                 <ul>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    {% with home_page.get_children.live.in_menu as menu_items %}
+                        {% for page in menu_items %}
+                            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                        {% endfor %}
+                    {% endwith %}
                 </ul>
             </nav>
 

@@ -28,7 +28,13 @@ header {
             display: inline;
 
             > a {
-                padding: 10px;
+                padding: 20px;
+                color: inherit;
+
+                &:hover {
+                    text-decoration: inherit;
+                    border-bottom: 5px solid #007FFF;
+                }
             }
         }
     }

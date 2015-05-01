@@ -14,8 +14,7 @@ class HomePage(Page):
         blank=True,
         on_delete=models.SET_NULL,
     )
-    hero_title = models.CharField(max_length=255, blank=True)
-    hero_text = models.TextField(max_length=255, blank=True)
+    intro = models.TextField(max_length=255, blank=True)
 
     def get_contact_page(self):
         return ContactPage.objects.live().child_of(self).first()

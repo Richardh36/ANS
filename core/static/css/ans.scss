@@ -92,10 +92,18 @@ main {
             margin-right: 20px;
 
             > div {
-                padding-left: 20px;
-                padding-right: 20px;
+                > a {
+                    display: block;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    color: inherit;
+                    background-color: darken(#F3F4F6, 3%);
 
-                > .thing-we-do {
+                    &:hover {
+                        background-color: darken(#F3F4F6, 10%);
+
+                        text-decoration: inherit;
+                    }
 
                     > h3 {
                         padding: 5px;
@@ -107,10 +115,6 @@ main {
 
                     > p {
                         padding: 5px;
-                    }
-
-                    > a {
-                        text-align: right;
                     }
                 }
             }

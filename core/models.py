@@ -58,3 +58,7 @@ class StandardPage(Page):
         ImageChooserPanel('hero_image'),
         panels.FieldPanel('intro'),
     ]
+
+
+class ProductIndexPage(Page):
+    parent_page_types = [HomePage]

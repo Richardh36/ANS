@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 
+{% load wagtailimages_tags %}
+
 {% block body_class %}template-standardpage{% endblock %}
 
 {% block hero %}
-    <img id="hero-image" src="http://lorempixel.com/1024/256/technics/">
+    {% image self.hero_image fill-1000x256 as hero_image %}
+    <img id="hero-image" src="{{ hero_image.url }}" alt="{{ hero_image.title }}">
+
+    <div id="hero-content">
+        <h1>{{ self.title }}</h1>
+        <h2>{{ self.intro }}</h2>
+    </div>
 {% endblock %}
 
 {% block content %}
-    <h2>{{ self.title }}</h2>
 {% endblock %}

@@ -1,0 +1,126 @@
+$header-height: 100px;
+
+body {
+    margin: 0;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+    line-height: $header-height;
+
+    img#logo {
+        float: left;
+        height: 100%;
+        padding: 5px;
+    }
+
+    nav > ul {
+        list-style-type: none;
+        vertical-align: middle;
+        text-transform: uppercase;
+        font-size: 1.5em;
+
+        li {
+            display: inline;
+
+            > a {
+                padding: 10px;
+            }
+        }
+    }
+
+    div#header-contact {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+
+        div {
+            line-height: 20px;
+            text-align: right;
+            color: #333;
+
+            &.telephone {
+                line-height: 1.2em;
+                font-size: 2.5em;
+                font-weight: bold;
+            }
+
+            span.glyphicon {
+                font-size: 0.7em;
+            }
+        }
+    }
+}
+
+main {
+    margin-top: $header-height;
+
+    div#hero {
+        position: relative;
+
+        img#hero-image {
+            width: 100%;
+        }
+
+        div#hero-content {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            color: #FFF;
+            text-shadow: 0px 0px 4px #000;
+
+            h1 {
+                font-size: 50px;
+            }
+        }
+    }
+
+    div#content {
+        padding: 20px;
+        background-color: #F3F4F6;
+
+        > h2 {
+            margin-top: 0;
+        }
+
+        > div.row {
+            margin-left: 20px;
+            margin-right: 20px;
+
+            > div {
+                padding-left: 20px;
+                padding-right: 20px;
+
+                > .thing-we-do {
+
+                    > h3 {
+                        padding: 5px;
+                    }
+
+                    > img {
+                        width: 100%;
+                    }
+
+                    > p {
+                        padding: 5px;
+                    }
+
+                    > a {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #434A4F;
+    color: #FFF;
+    padding: 20px;
+}

@@ -2,12 +2,45 @@
 
 {% load static core_tags %}
 
-{% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
+{% block body_class %}template-homepage{% endblock %}
+
+{% block hero %}
+    <img id="hero-image" src="http://lorempixel.com/1024/256/technics/">
+    <div id="hero-content">
+        <h1>A better IT experience...</h1>
+        <h2>We provide IT support services for Oxfordshire's small/medium businesses.</h2>
+    </div>
+{% endblock %}
 
 {% block content %}
-    <h1>Welcome to your new Wagtail site!</h1>
+    <h2>What we do</h2>
 
-    <p>You can access the admin interface <a href="{% url 'wagtailadmin_home' %}">here</a> (make sure you have run "./manage.py createsuperuser" in the console first).
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thing-we-do">
+                <h3>Virtualisation</h3>
+                <img src="http://lorempixel.com/256/128/technics/">
+                <p>blah blah blah blah blah blah</p>
+                <a href="#">Read more &gt;</a>
+            </div>
+        </div>
 
-    <p>If you haven't already given the documentation a read, head over to <a href="http://wagtail.readthedocs.org/">http://wagtail.readthedocs.org</a> to start building on Wagtail</p>
+        <div class="col-md-4">
+            <div class="thing-we-do">
+                <h3>Small business</h3>
+                <img src="http://lorempixel.com/256/128/technics/">
+                <p>blah blah blah blah blah blah</p>
+                <a href="#">Read more &gt;</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="thing-we-do">
+                <h3>Office 365</h3>
+                <img src="http://lorempixel.com/256/128/technics/">
+                <p>blah blah blah blah blah blah</p>
+                <a href="#">Read more &gt;</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

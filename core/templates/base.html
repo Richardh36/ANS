@@ -12,28 +12,65 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <link rel="stylesheet" type="text/css" href="{% static 'css/vendor/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/vendor/bootstrap-theme.min.css' %}">
+
         {% compress css %}
-            
             <link rel="stylesheet" type="text/x-scss" href="{% static 'css/ans.scss' %}">
         {% endcompress %}
 
         {% block extra_css %}
-            
         {% endblock %}
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        <header>
+            <img id="logo" src="{% static 'img/logo.png' %}" alt="Agile Networking Solutions Ltd">
+
+            <nav role="navigation">
+                <ul>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div id="header-contact">
+                <div class="telephone">
+                    <span class="glyphicon glyphicon-earphone"></span> 01865 881130
+                </div>
+                <div class="email">
+                    <a class="email" href="mailto:enquiries@agilenetworking.co.uk">
+                        <span class="glyphicon glyphicon-envelope"></span> enquiries@agilenetworking.co.uk
+                    </a>
+                </div>
+
+            </div>
+        </header>
+
+        <main>
+            <div id="hero">
+                {% block hero %}{% endblock %}
+            </div>
+            <div id="content">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; Agile Networking Solutions Ltd 2015</p>
+        </footer>
+
+
+        <script type="text/javascript" src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
 
         {% compress js %}
-            
             <script type="text/javascript" src="{% static 'js/ans.js' %}"></script>
         {% endcompress %}
 
         {% block extra_js %}
-            
         {% endblock %}
     </body>
 </html>

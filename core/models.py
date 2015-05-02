@@ -51,9 +51,9 @@ class StandardPage(ANSPage):
     pass
 
 
-class ProductIndexPage(Page):
+class ProductIndexPage(ANSPage):
     parent_page_types = [HomePage]
 
 
-class ProductPage(Page):
+class ProductPage(ANSPage):
     parent_page_types = [ProductIndexPage]

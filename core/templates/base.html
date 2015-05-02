@@ -30,7 +30,7 @@
             {% get_homepage as home_page %}
 
             <a href="{{ home_page.url }}">
-                <img id="logo" src="{% static 'img/logo.png' %}" alt="Agile Networking Solutions Ltd">
+                <img class="logo" src="{% static 'img/logo.png' %}" alt="Agile Networking Solutions Ltd">
             </a>
 
             <nav role="navigation">
@@ -45,7 +45,7 @@
 
             {% with home_page.get_contact_page as contact_page %}
                 {% if contact_page %}
-                    <div id="header-contact">
+                    <div class="header-contact">
                         <div class="telephone">
                             <span class="glyphicon glyphicon-earphone"></span> {{ contact_page.phone_number }}
                         </div>
@@ -60,12 +60,12 @@
         </header>
 
         <main>
-            <div id="banner"{% if self.main_image %}{% image self.main_image fill-1200x300 as main_image %} style="background: url('{{ main_image.url }}'); background-size: cover;"{% endif %}>
+            <div class="banner"{% if self.main_image %}{% image self.main_image fill-1200x300 as main_image %} style="background: url('{{ main_image.url }}'); background-size: cover;"{% endif %}>
                 <h1>{{ self.title }}</h1>
                 <h2>{{ self.intro }}</h2>
             </div>
 
-            <div id="content">
+            <div class="content">
                 {% block content %}{% endblock %}
             </div>
         </main>

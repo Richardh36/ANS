@@ -65,3 +65,7 @@ class StandardPage(Page):
 
 class ProductIndexPage(Page):
     parent_page_types = [HomePage]
+
+
+class ProductPage(Page):
+    parent_page_types = [ProductIndexPage]

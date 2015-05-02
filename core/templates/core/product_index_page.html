@@ -7,28 +7,17 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-sm-4">
-            <a href="#">
-                <h3>Virtualisation</h3>
-                <img src="http://lorempixel.com/256/128/technics/">
-                <p>blah blah blah blah blah blah</p>
-            </a>
-        </div>
-
-        <div class="col-sm-4">
-            <a href="#">
-                <h3>Small business</h3>
-                <img src="http://lorempixel.com/256/128/technics/">
-                <p>blah blah blah blah blah blah</p>
-            </a>
-        </div>
-
-        <div class="col-sm-4">
-            <a href="#">
-                <h3>Office 365</h3>
-                <img src="http://lorempixel.com/256/128/technics/">
-                <p>blah blah blah blah blah blah</p>
-            </a>
-        </div>
+        {% for product in products %}
+            <div class="col-sm-4">
+                <a href="{{ product.url }}">
+                    <h3>{{ product.title }}</h3>
+                    {% if product.listing_image %}
+                        {% image product.listing_image fill-256x128 as listing_image %}
+                        <img src="{{ listing_image.url }}" alt="{{ listing_image.title }}">
+                    {% endif %}
+                    <p>{{ product.listing_summary }}</p>
+                </a>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

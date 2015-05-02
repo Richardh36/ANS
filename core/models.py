@@ -32,10 +32,16 @@ class ANSPage(Page):
 
 
 class HomePage(ANSPage):
+    parent_page_types = []
+
     def get_contact_page(self):
         return ContactPage.objects.live().child_of(self).first()
 
-    parent_page_types = []
+    def get_context(self, request):
+        context = super().get_context(request)
+        context['products'] = ProductPage.objects.live()[:3]
+
+        return context
 
 
 class ContactPage(ANSPage):
@@ -60,6 +66,12 @@ class StandardPage(ANSPage):
 
 class ProductIndexPage(ANSPage):
     parent_page_types = [HomePage]
+
+    def get_context(self, request):
+        context = super().get_context(request)
+        context['products'] = ProductPage.objects.live()
+
+        return context
 
 
 class ProductPage(ANSPage):

@@ -60,15 +60,15 @@
         </header>
 
         <main>
-            <div id="hero">
-                {% if self.hero_image %}
-                    {% image self.hero_image fill-1000x256 as hero_image %}
-                    <img id="hero-image" src="{{ hero_image.url }}" alt="{{ hero_image.title }}">
+            <div id="banner">
+                {% if self.main_image %}
+                    {% image self.main_image fill-1000x256 as main_image %}
+                    <img id="main-image" src="{{ main_image.url }}" alt="{{ main_image.title }}">
                 {% else %}
-                    <img id="hero-image" src="{% static 'img/default-hero.jpg' %}">
+                    <img id="main-image" src="{% static 'img/default-banner.jpg' %}">
                 {% endif %}
 
-                <div id="hero-content">
+                <div id="banner-content">
                     <h1>{{ self.title }}</h1>
                     <h2>{{ self.intro }}</h2>
                 </div>

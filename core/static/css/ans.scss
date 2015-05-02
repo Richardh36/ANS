@@ -66,14 +66,14 @@ header {
 main {
     margin-top: $header-height;
 
-    div#hero {
+    div#banner {
         position: relative;
 
-        img#hero-image {
+        img#main-image {
             width: 100%;
         }
 
-        div#hero-content {
+        div#banner-content {
             position: absolute;
             top: 50px;
             left: 50px;

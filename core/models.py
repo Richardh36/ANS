@@ -8,7 +8,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
 
 class HomePage(Page):
-    hero_image = models.ForeignKey(
+    main_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
@@ -22,13 +22,13 @@ class HomePage(Page):
     parent_page_types = []
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('hero_image'),
+        ImageChooserPanel('main_image'),
         panels.FieldPanel('intro'),
     ]
 
 
 class ContactPage(Page):
-    hero_image = models.ForeignKey(
+    main_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
@@ -41,7 +41,7 @@ class ContactPage(Page):
     parent_page_types = [HomePage]
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('hero_image'),
+        ImageChooserPanel('main_image'),
         panels.FieldPanel('intro'),
         panels.FieldPanel('phone_number'),
         panels.FieldPanel('email_address'),
@@ -49,7 +49,7 @@ class ContactPage(Page):
 
 
 class StandardPage(Page):
-    hero_image = models.ForeignKey(
+    main_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
@@ -58,7 +58,7 @@ class StandardPage(Page):
     intro = models.TextField(max_length=255, blank=True)
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('hero_image'),
+        ImageChooserPanel('main_image'),
         panels.FieldPanel('intro'),
     ]
 

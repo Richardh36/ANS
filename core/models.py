@@ -3,8 +3,11 @@ from __future__ import unicode_literals
 from django.db import models
 
 from wagtail.wagtailcore.models import Page
+from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailadmin import edit_handlers as panels
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+
+from core.blocks import BASIC_BLOCKS
 
 
 class ANSPage(Page):
@@ -48,7 +51,11 @@ class ContactPage(ANSPage):
 
 
 class StandardPage(ANSPage):
-    pass
+    body = StreamField(BASIC_BLOCKS, blank=True)
+
+    content_panels = ANSPage.content_panels + [
+        panels.StreamFieldPanel('body'),
+    ]
 
 
 class ProductIndexPage(ANSPage):
@@ -56,4 +63,10 @@ class ProductIndexPage(ANSPage):
 
 
 class ProductPage(ANSPage):
+    body = StreamField(BASIC_BLOCKS, blank=True)
+
+    content_panels = ANSPage.content_panels + [
+        panels.StreamFieldPanel('body'),
+    ]
+
     parent_page_types = [ProductIndexPage]

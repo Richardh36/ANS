@@ -60,18 +60,9 @@
         </header>
 
         <main>
-            <div id="banner">
-                {% if self.main_image %}
-                    {% image self.main_image fill-1000x256 as main_image %}
-                    <img id="main-image" src="{{ main_image.url }}" alt="{{ main_image.title }}">
-                {% else %}
-                    <img id="main-image" src="{% static 'img/default-banner.jpg' %}">
-                {% endif %}
-
-                <div id="banner-content">
-                    <h1>{{ self.title }}</h1>
-                    <h2>{{ self.intro }}</h2>
-                </div>
+            <div id="banner"{% if self.main_image %}{% image self.main_image fill-1200x300 as main_image %} style="background: url('{{ main_image.url }}'); background-size: cover;"{% endif %}>
+                <h1>{{ self.title }}</h1>
+                <h2>{{ self.intro }}</h2>
             </div>
 
             <div id="content">

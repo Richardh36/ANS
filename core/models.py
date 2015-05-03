@@ -45,12 +45,28 @@ class HomePage(ANSPage):
 
 
 class ContactPage(ANSPage):
+    company_name = models.CharField(max_length=100)
+    line1 = models.CharField("First line", max_length=50)
+    line2 = models.CharField("Second line", max_length=50, blank=True)
+    town = models.CharField(max_length=50)
+    county = models.CharField(max_length=50)
+    postcode = models.CharField(max_length=10)
+    country = models.CharField(max_length=50)
     phone_number = models.CharField(max_length=20)
     email_address = models.EmailField(max_length=254)
 
     parent_page_types = [HomePage]
 
     content_panels = ANSPage.content_panels + [
+        panels.MultiFieldPanel([
+            panels.FieldPanel('company_name'),
+            panels.FieldPanel('line1'),
+            panels.FieldPanel('line2'),
+            panels.FieldPanel('town'),
+            panels.FieldPanel('county'),
+            panels.FieldPanel('postcode'),
+            panels.FieldPanel('country'),
+        ], "Address"),
         panels.FieldPanel('phone_number'),
         panels.FieldPanel('email_address'),
     ]

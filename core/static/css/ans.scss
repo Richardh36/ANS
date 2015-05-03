@@ -222,13 +222,41 @@ footer {
 body.template-contactpage {
     div.contact-info {
         div {
-            &.telephone {
+            margin-bottom: 20px;
+
+            h3 {
+                margin-top: 5px;
+            }
+
+            &.telephone > span {
                 line-height: 1.2em;
                 font-size: 2.5em;
             }
 
-            span.glyphicon {
-                font-size: 0.7em;
+            &.email > a {
+                line-height: 1.2em;
+                font-size: 2.0em;
+            }
+
+            &.address > span {
+                line-height: 1.2em;
+                font-size: 1.2em;
+            }
+
+            @media(max-width: 600px) {
+                h3 {
+                    font-size: 1.5em;
+                }
+
+                &.email > a {
+                    line-height: 1.0em;
+                    font-size: 1.3em;
+                }
+
+                &.address > span {
+                    line-height: 1.0em;
+                    font-size: 1.0em;
+                }
             }
         }
     }

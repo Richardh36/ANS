@@ -5,12 +5,25 @@
 {% block content %}
     <div class="page contact-info">
         <div class="telephone">
-            <span class="glyphicon glyphicon-earphone"></span> {{ self.phone_number }}
+            <h3>Phone number</h3>
+            <span>{{ self.phone_number }}</span>
         </div>
         <div class="email">
+            <h3>Email address</h3>
             <a class="email" href="mailto:enquiries@agilenetworking.co.uk">
-                <span class="glyphicon glyphicon-envelope"></span> {{ self.email_address }}
+                {{ self.email_address }}
             </a>
+        </div>
+        <div class="address">
+            <h3>Address</h3>
+            <span>
+                {{ self.company_name }}<br>
+                {{ self.line1 }}<br>
+                {{ self.line2 }}<br>
+                {{ self.town }}<br>
+                {{ self.county }} {{ self.postcode }}<br>
+                {{ self.country }}
+            </span>
         </div>
     </div>
 {% endblock %}

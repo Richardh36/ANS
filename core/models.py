@@ -93,19 +93,8 @@ class ProductIndexPage(ANSPage):
 class ProductPage(ANSPage):
     body = StreamField(BASIC_BLOCKS, blank=True)
 
-    listing_image = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-    )
-    listing_summary = models.TextField(max_length=255, blank=True)
-
     content_panels = ANSPage.content_panels + [
         panels.StreamFieldPanel('body'),
-        ImageChooserPanel('listing_image'),
-        panels.FieldPanel('listing_summary'),
     ]
 
     parent_page_types = [ProductIndexPage]

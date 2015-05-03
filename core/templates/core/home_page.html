@@ -9,11 +9,11 @@
             <div class="col-sm-4">
                 <a href="{{ product.url }}">
                     <h3>{{ product.title }}</h3>
-                    {% if product.listing_image %}
-                        {% image product.listing_image fill-256x128 as listing_image %}
-                        <img src="{{ listing_image.url }}" alt="{{ listing_image.title }}">
+                    {% if product.main_image %}
+                        {% image product.main_image fill-256x128 as main_image %}
+                        <img src="{{ main_image.url }}" alt="{{ main_image.title }}">
                     {% endif %}
-                    <p>{{ product.listing_summary }}</p>
+                    <p>{{ product.intro }}</p>
                 </a>
             </div>
         {% endfor %}
